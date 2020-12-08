@@ -1,0 +1,185 @@
+//Отзывы
+.reviews {
+    margin: 150px 0 0 0;
+
+    .container {
+        display: flex;
+		flex-direction: column;
+		justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(255,255,255, .8);
+        border-radius: 10px;
+	}
+	
+	&__title {
+		align-self: center;
+	}
+}
+
+.image-slider {
+    position: relative;
+    min-width: 100%;
+    max-height: 360px; 
+	margin: 10px 0 0 0;
+	padding: 0 0 40px 0;  
+	
+	&__wrapper {
+		list-style: none;
+    }
+    
+    &__slide {
+        display: flex;
+    }
+	
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 50px;
+		width: 50%;
+		text-decoration: none;
+        color: $mainFontColor;
+        background-color: $secondBgColor;
+		transition: $transition;
+
+		&-author {
+			width: 100%;
+			padding: 10px;
+			font-size: 30px;
+			font-weight: bold;
+			border-bottom: 3px dashed $mainFontColor;
+		}
+
+		&-comment {
+			padding: 10px;
+			font-size: 20px;
+			line-height: 1.3;
+		}
+	}
+	
+	&__image {
+		width: 50%;
+        text-align: center;
+		
+		img {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			filter: grayscale(.5);
+		}
+	}	
+	
+	.swiper-pagination {
+		position: absolute;
+		bottom: 0;
+		background-color: $thirdBgColor;
+		border-radius: 10px;
+	}
+	
+	.swiper-pagination-bullet {
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 14px;
+		background-color: $mainBgColor;
+	}
+}
+ 
+@media (max-width: $screen-md-max) {
+	.reviews {
+		.container {
+			border-radius: 0;
+		}
+	}
+
+	.image-slider {
+		&__text {
+			width: 40%;
+			padding: 20px;
+		}
+
+		&__image {
+			width: 60%;
+			max-height: 500px;
+			text-align: center;
+			
+			img {
+				display: flex;
+				width: 100%;
+				height: 100%;
+			}
+		}	
+		
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.image-slider {
+		max-height: 650px; 
+		&__slide {
+			flex-direction: column;
+		}
+
+		&__text {
+			order: 2;
+			padding: 20px;
+			width: 100%;
+	
+			&-author {
+				padding: 10px;
+				font-size: 30px;
+				border-bottom: 3px dashed $mainFontColor;
+			}
+	
+			&-comment {
+				padding: 10px;
+				font-size: 20px;
+				line-height: 1.3;
+			}
+		}
+
+		&__image {
+			width: 100%;
+			max-height: 400px;
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}	
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.image-slider {
+		max-height: 500px; 
+
+		&__text {
+			padding: 10px;
+	
+			&-author {
+				padding: 8px;
+				font-size: 25px;
+				border-bottom: 3px dashed $mainFontColor;
+			}
+	
+			&-comment {
+				padding: 8px;
+				font-size: 18px;
+				line-height: 1.2;
+			}
+		}
+
+		&__image {
+			width: 100%;
+			max-height: 400px;
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}	
+	}
+}

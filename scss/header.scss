@@ -1,0 +1,358 @@
+//Шапка
+.header {
+    &__menu {
+		&--static {
+			position: static;
+		}
+		
+		&--fixed {
+			position: fixed;
+			top: 0;
+			z-index: 10;
+			width: 100%; 
+		}
+	}
+}
+
+//Контакты
+.contacts {
+	color: $mainFontColor;
+    background-color: $secondBgColor;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 50px;
+    }
+
+    &__list,
+    &__social {
+        display: flex;	
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    &__list {
+        font-size: 18px;
+    }
+
+    &__social,
+    &__schedule,
+    &__telephone {
+        &:after {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__social {
+        position: relative;
+        margin: 0 20px 0 0;
+
+        &:after {
+            top: -7px;
+            right: -40px;
+            z-index: 2;
+            width: 35px;
+            height: 35px;
+            background-image: url("../img/dont.svg");
+        }
+    }
+
+    &__schedule {
+        position: relative;
+        margin: 0 0 0 40px;
+
+        &:after {
+            top: -7px;
+            right: -40px;
+            width: 35px;
+            height: 35px;
+            background-image: url("../img/24.svg");
+        }
+    }
+
+    &__telephone {
+        position: relative;
+        border-bottom: 3px solid transparent;
+        text-decoration: none;
+        font-size: 18px;
+        color: $mainFontColor;
+        transition: $transition;
+
+        &:after {
+            top: -2px;
+            right: -35px;
+            width: 30px;
+            height: 23px;
+            background-image: url("../img/telephone.svg");
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom-color: $mainFontColor;
+        }
+    }
+
+    @media (max-width: $screen-md-max) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__list {
+            flex-direction: column;
+        }
+
+        &__item,
+        &__telephone {
+            margin: 30px 0 0 0;
+        }
+    }
+}
+
+//Меню
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100px;
+	background-color: $mainBgColor;
+	box-shadow: 0 0 15px -5px #000;
+	
+	.container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &__logo {
+        width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+	&__hamburger {
+		display: none;
+		background-color: $mainBgColor;
+	}
+
+	&__list {
+        display: flex;
+        justify-content: flex-end;
+		list-style: none;
+		background-color: $mainBgColor;
+	}
+	
+	&__item {
+        margin: 0 0 0 5px;
+	}
+	
+	&__link {
+		display: inline-block;
+		padding: 20px 5px;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 1px;	
+		color: $secondFontColor;
+		font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px 0 10px 0;
+		transition: $transition;
+		
+		&:hover,
+		&:focus {
+			color: $mainFontColor;
+			background-color: $thirdBgColor;
+			box-shadow: 0 0 5px  black;
+			text-shadow: 0 0 3px white;
+		}
+	}
+}
+
+@media (max-width: $screen-md-max) {
+	.menu {
+        .container {
+            justify-content: space-around;
+        }
+
+		&__bl {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+            background: rgb(253,253,255);
+            background: linear-gradient(201deg, rgba(253,253,255,1) 0%, rgba(30,71,7,1) 62%, rgba(30,71,7,1) 100%);
+        }
+        
+        &__logo {
+            position: relative;
+			z-index: 5;
+			
+			&.activeLogo {
+				width: auto;
+				height: 90px;
+				position: fixed;
+				top: 0;
+
+				img {
+					height: 100%;
+					width: auto;
+				}
+			}
+        }
+				
+		&__hamburger {
+            position: relative;
+			z-index: 5;
+			display: block;
+			align-self: center;
+			width: 100px;
+            height: 100px;
+            border: 1px solid $secondBgColor;
+			border-radius: 5px;
+			box-shadow: 0 0 5px -2px black;
+			transition: $transition;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 10px;
+				background-color: $secondBgColor;
+				border-radius: 20%;
+			}
+		
+			&:before {
+				top: 5px;
+				transition: 1s;
+			}
+
+			&:after {
+				bottom: 5px;
+				transition: 1s;
+			}
+
+			&.activeHamburger:before {
+				transform: rotate(45deg);
+				top: 44px; 
+			}
+
+			&.activeHamburger:after {
+				transform: rotate(-45deg); 
+				bottom: 44px;
+			}
+
+			&.activeHamburger {
+				position: fixed;
+                top: 0;
+                right: 10px;
+				background-color: rgba(253,253,255,.7);
+				border-radius: 5px 5px 0 0;
+			}
+
+			&.activeHamburger span {
+				transform: scale(0);
+			}
+
+			span {
+				position: absolute;
+				top: 45%;
+				left: 10px;
+				width: 80%;
+				height: 10px;
+				background-color: $secondBgColor;
+				border-radius: 30px;
+				transition: $transition;
+			}
+		}
+		
+		&__list {
+            position: absolute;
+			top: 0;
+			z-index: 4;
+			display: none;
+			width: 100%;
+			height: 100%;
+			padding: 20px 0 100px;
+			flex-direction: column;
+			align-items: center;
+            background-color: rgba(253,253,255,.7);
+            border-top: 2px solid $secondFontColor;
+            visibility: hidden;
+			opacity: 0;
+			overflow-y: scroll;
+			transition: $transition;
+		}
+		
+		.flex {
+            display: flex;
+            justify-content: flex-start;
+		}
+		
+		.active {
+			position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+			visibility: visible;
+			opacity: 1;
+		}
+		
+		&__item {
+			margin: 20px 0 0 0;
+		}
+
+		&__link {
+			font-size: 25px;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+    .menu {
+        max-height: 80px;
+
+        .container {
+            justify-content: space-between;
+        }
+
+        &__hamburger {
+			align-self: center;
+			width: 80px;
+            height: 80px;
+
+			&:before,
+			&:after {
+				height: 8px;
+			}
+		
+			&.activeHamburger:before {
+				top: 35px; 
+			}
+
+			&.activeHamburger:after {
+				bottom: 35px;
+			}
+
+			span {
+				height: 8px;
+			}
+        }
+        
+        .active {
+            top: 80px;
+		}
+    }
+}

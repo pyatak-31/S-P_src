@@ -1,0 +1,88 @@
+//Hero
+.hero {
+	color: $mainFontColor;
+    background-color: $secondBgColor;
+    
+    .container {
+        background-image: url("../img/hero.jpg");   
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    &__slogan {
+        display: flex;
+        flex-direction: column;
+        
+        max-width: 650px;
+        padding: 100px 0;
+    }
+
+    &__title {
+        font-size: 70px;
+        line-height: 100px;
+    }
+
+    &__subtitle {
+        margin: 50px 0 0 0;
+        font-size: 20px;
+        line-height: 32px;	
+    }
+
+    &__link {
+        align-self: center;
+        margin: 70px 0 0 0;
+        padding: 20px 35px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        border: 5px solid white;
+        border-radius: 20px;
+        transition: .4s;
+
+        &:hover,
+        &:focus {
+            color: black;
+            background-color: white;
+        }
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    .hero {
+        .container {
+            display: flex;
+            justify-content: center;
+            background-image: none;
+            background-color: $secondBgColor;
+
+            
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .hero {
+    &__slogan {
+        padding: 40px 0;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 40px;
+        line-height: 64px;
+    }
+
+    &__subtitle {
+        text-align: center;
+        font-size: 18px;
+        line-height: 32px;	
+    }
+
+    &__link {
+        margin: 50px 0 0 0px;
+        padding: 20px 35px;
+        font-size: 18px;
+    }
+}
+}

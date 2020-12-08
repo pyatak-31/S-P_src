@@ -1,0 +1,76 @@
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    @include font-montserrat;
+    color: $secondFontColor;
+    background-image: url("../img/flag.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media (max-width: $screen-lg-max) {
+    body {
+        background-image: url("../img/flag_1200.jpg");
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    body {
+        background-image: url("../img/flag_990.jpg");
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    body {
+        background-image: url("../img/flag_765.jpg");
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    body {
+        background-image: url("../img/flag_575.jpg");
+    }
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.title {
+    border-bottom: 5px solid $secondFontColor;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 80px;
+    color: $secondFontColor;
+}
+
+@media (max-width: $screen-sm-max) {
+    .title {
+        font-size: 30px;
+        line-height: 64px;
+    }
+}

@@ -1,0 +1,70 @@
+//О нас
+.about-us {
+    margin: 150px 0 0 0;
+    padding: 30px 0;
+    background-color: rgba(255,255,255, .8);
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        max-width: 500px;
+        margin: 0 0 0 15px;
+    }
+
+    &__description {
+        margin: 50px 0 0 0;
+        font-size: 25px;
+        text-indent: $text-indent;
+    }
+
+    &__image {
+        max-width: 500px;
+        margin: 50px 0 0 0;
+       
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 1px 1px black;
+        }
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    .about-us {
+        margin: 100px 0 0 0;
+
+        .container {
+            flex-direction: column;
+        }
+        &__text {
+            order: 0;
+        }
+
+        &__description {
+            margin: 40px 0 0 0;
+        }
+
+        &__image {
+            order: 1;
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .about-us {
+        margin: 50px 0 0 0;
+
+        &__image {
+            max-width: 100%;
+        }
+
+        &__description {
+            margin: 30px 0 0 0;
+            font-size: 20px;
+        }
+    }
+}

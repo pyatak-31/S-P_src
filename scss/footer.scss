@@ -1,0 +1,60 @@
+.footer {
+	margin: 150px 0 0 0;
+	background-color: black;
+    color: white;
+    
+    .section-inner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px 10px;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__telephone-link {
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        border-bottom: 3px solid transparent;
+        transition: .3s;
+
+        &:hover,
+        &:focus {
+            border-bottom: 3px solid white;
+        }
+    }
+
+    &__text {
+        margin: 20px 0 0 0;
+        font-size: 18px;
+    }
+
+    &__logo {
+        max-width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    .footer {
+        .section-inner {
+            flex-direction: column;
+        }
+
+        &__contacts {
+            margin: 50px 0;
+        }
+
+        &__logo {
+            order: -1;
+        }
+    }
+}

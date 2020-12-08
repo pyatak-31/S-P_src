@@ -1,0 +1,123 @@
+//Руководители
+.leaders {
+    margin: 150px 0 0 0;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(255,255,255, .8);
+        border-radius: 10px;
+    }   
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 100px 0 0 0;
+        list-style: none;
+    }
+
+    &__item {
+        max-width: 300px;
+        border: 2px solid $secondFontColor;
+        border-radius: 150px 150px 20px 20px;
+        box-shadow: inset 10px 0 3px 5px #980002,
+                    0 0 5px 2px $secondFontColor;
+
+        &-image {
+            margin: -20px auto 0;
+            max-width: 200px;
+            height: 200px;
+            box-shadow: inset 0 0 1px 3px black,
+                        0 0 2px 1px black;;
+            border-radius: 50%;
+            overflow: hidden;
+            background-image: url("../img/silvio.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &-silvio {
+            background-image: url("../img/silvio.jpg");
+
+            @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+                background-image: url("../img/silvio@2x.jpg");
+            }
+        }
+
+        &-tony {
+            background-image: url("../img/tony.jpg");
+
+            @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+                background-image: url("../img/tony@2x.jpg");
+            }
+        }
+
+        &-polly {
+            background-image: url("../img/polly.jpg");
+
+            @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+                background-image: url("../img/polly@2x.jpg");
+            }
+        }
+
+        &-name {
+            margin: 20px 10px;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 40px;
+        }
+        
+        &-position {
+            margin: 0 10px;
+            text-decoration: underline;
+            font-size: 18px;
+            line-height: 30px;
+            color: $secondFontColor;
+        }
+
+        &-quote {
+            margin: 15px 15px 10px;
+            padding: 5px;
+            font-size: 16px;
+            color: $thirdFontColor;
+        }
+    }
+}
+
+@media (max-width: $screen-md-max) {
+    .leaders {
+        margin: 100px 0 0 0;
+
+        .container {
+            border-radius: 0;
+        }
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0 0 0;
+        }
+
+        &__item{
+            &:not(:first-child) {
+                margin: 50px 0 0 0;
+            }
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .leaders {
+        margin: 50px 0 0 0;
+
+        &__list {
+            margin: 50px 0 0 0;
+        }
+    }
+}

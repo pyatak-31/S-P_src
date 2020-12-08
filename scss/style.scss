@@ -1,0 +1,26 @@
+@import 'normalize.scss';
+
+// === Mixins ===
+@mixin font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+// === Variables ===
+@import 'variables';
+
+// === Common ===
+@import 'common';
+@import 'swiper-bundle';
+
+//===HEADER===
+@import 'header';
+@import 'hero';
+@import 'services';
+@import 'advantages';
+@import 'about_us';
+@import 'slogan';
+@import 'leaders';
+@import 'partners';
+@import 'reviews';
+@import 'footer';
+@import 'polly';
